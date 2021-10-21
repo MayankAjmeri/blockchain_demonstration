@@ -65,8 +65,6 @@ class Block extends Component {
       }
     }
     this.setState(() => ({ nonce: nonce, hash: hash_value }));
-
-    console.log("clicked");
   }
 
   render() {

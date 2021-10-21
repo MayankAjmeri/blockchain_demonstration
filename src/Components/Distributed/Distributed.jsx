@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Miner from "../Miner/Miner";
+import Miner from "../Miner/Temp";
 import "./Distributed.scss";
 
 class Distributed extends Component {
