@@ -52,7 +52,7 @@ const Miner = ({
           placeholder={blockchain.hash}
         />
       </div>
-      <button className="mine" onClick={clickHandler}>
+      <button className="mine" onClick={(e) => clickHandler(blockchain.id)}>
         Mine
       </button>
     </div>
