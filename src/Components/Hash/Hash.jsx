@@ -17,10 +17,10 @@ class Hash extends Component {
 
   render() {
     return (
-      <div className="hash_Container">
+      <div className="container">
         <h1>Hash </h1>
         <div className="hash">
-          <div className="data">
+          <div className="dataform">
             <h4>Data: </h4>
             <textarea
               value={this.state.data}
@@ -29,9 +29,10 @@ class Hash extends Component {
               className="data_Input"
             />
           </div>
-          <div className="data">
+          <div className="dataform">
             <h4>Hash: </h4>
             <textarea
+              rows={1}
               disabled
               className="data_Input"
               placeholder={this.state.data}
