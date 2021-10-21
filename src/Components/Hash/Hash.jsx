@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Hash.scss";
-
+const crypto = require("crypto");
 class Hash extends Component {
   constructor() {
     super();
@@ -12,7 +12,8 @@ class Hash extends Component {
 
   handleChange(event) {
     let p = event.target.value;
-    this.setState(() => ({ data: p }));
+    const hash = crypto.createHash("sha256").update(p).digest("hex");
+    this.setState(() => ({ data: hash }));
   }
 
   render() {
@@ -23,7 +24,6 @@ class Hash extends Component {
           <div className="dataform">
             <h4>Data: </h4>
             <textarea
-              value={this.state.data}
               onChange={this.handleChange}
               rows={5}
               className="data_Input"
