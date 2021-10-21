@@ -1,0 +1,27 @@
+.container {
+  padding: 10px;
+  width: auto;
+}
+
+.dataform {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.data_Input {
+  width: 65vw;
+  margin: 10px 20px;
+  padding: 10px;
+}
+
+.mine {
+  background-color: royalblue;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  margin: 20px;
+  font-size: large;
+  color: white;
+  border: 0;
+}
