@@ -52,24 +52,23 @@ class Block extends Component {
 
   clickHandler(event) {
     this.setState({ loading: true });
-    let nonce = 1;
-    const hash = crypto.createHash("sha256");
-    let is_req_hash = false;
-    let hash_value;
-    let data = this.state.data;
-    let block = this.state.block;
-    while (!is_req_hash) {
-      hash_value = hash.update(nonce + data + block).digest("hex");
-      if (hash_value.substr(0, 4) === "0000") {
-        is_req_hash = true;
-      } else {
-        nonce++;
-      }
-    }
     setTimeout(() => {
-      this.setState(() => ({ loading: false }));
-    }, 2000);
-    this.setState(() => ({ nonce: nonce, hash: hash_value }));
+      let nonce = 1;
+      const hash = crypto.createHash("sha256");
+      let is_req_hash = false;
+      let hash_value;
+      let data = this.state.data;
+      let block = this.state.block;
+      while (!is_req_hash) {
+        hash_value = hash.update(nonce + data + block).digest("hex");
+        if (hash_value.substr(0, 4) === "0000") {
+          is_req_hash = true;
+        } else {
+          nonce++;
+        }
+      }
+      this.setState(() => ({ loading: false, nonce: nonce, hash: hash_value }));
+    }, 1000);
   }
 
   render() {

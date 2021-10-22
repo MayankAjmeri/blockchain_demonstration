@@ -61,10 +61,10 @@ const Miner = ({
         className="mine"
         onClick={(e) => {
           setLoading(true);
-          clickHandler(blockchain.id);
           setTimeout(() => {
+            clickHandler(blockchain.id);
             setLoading(false);
-          }, 2000);
+          }, 500);
         }}
         disabled={loading}
       >
