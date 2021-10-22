@@ -1,3 +1,6 @@
+import "./Miner.scss";
+import { useState } from "react";
+
 const Miner = ({
   blockchain,
   handleBlockChange,
@@ -5,6 +8,8 @@ const Miner = ({
   handleNonceChange,
   clickHandler,
 }) => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="miner">
       <div className="dataform">
@@ -52,8 +57,29 @@ const Miner = ({
           placeholder={blockchain.hash}
         />
       </div>
-      <button className="mine" onClick={(e) => clickHandler(blockchain.id)}>
-        Mine
+      <button
+        className="mine"
+        onClick={(e) => {
+          setLoading(true);
+          clickHandler(blockchain.id);
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }}
+        disabled={loading}
+      >
+        {!loading ? (
+          <p style={{ margin: "0px" }}>Mine</p>
+        ) : (
+          <p style={{ margin: "0px", justifyContent: "center" }}>
+            {" "}
+            Mining
+            <i
+              className="fa fa-spinner fa-spin"
+              style={{ margin: "0 5px", fontSize: "24px" }}
+            />
+          </p>
+        )}
       </button>
     </div>
   );

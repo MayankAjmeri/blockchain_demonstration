@@ -9,6 +9,7 @@ class Block extends Component {
       nonce: "15390",
       block: "1",
       hash: "",
+      loading: false,
     };
     this.handleBlockChange = this.handleBlockChange.bind(this);
     this.handleNonceChange = this.handleNonceChange.bind(this);
@@ -50,6 +51,7 @@ class Block extends Component {
   }
 
   clickHandler(event) {
+    this.setState({ loading: true });
     let nonce = 1;
     const hash = crypto.createHash("sha256");
     let is_req_hash = false;
@@ -64,6 +66,9 @@ class Block extends Component {
         nonce++;
       }
     }
+    setTimeout(() => {
+      this.setState(() => ({ loading: false }));
+    }, 2000);
     this.setState(() => ({ nonce: nonce, hash: hash_value }));
   }
 
@@ -108,8 +113,16 @@ class Block extends Component {
               placeholder={this.state.hash}
             />
           </div>
-          <button className="mine" onClick={this.clickHandler}>
-            Mine
+          <button className="mine" onClick={this.clickHandler} disabled={this.state.loading}>
+            {!this.state.loading ? ( <p style={{margin: "0px"}}>Mine</p>
+            ): 
+             <p style={{margin: "0px", justifyContent: "center"}}> Mining    
+            <i
+              className="fa fa-spinner fa-spin"
+              style={{ margin: "0 5px", fontSize: "24px" }}
+            /> 
+             </p> 
+          }
           </button>
         </div>
       </div>

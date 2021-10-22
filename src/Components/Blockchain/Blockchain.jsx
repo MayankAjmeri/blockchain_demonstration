@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import crypto from "crypto";
 import "./Blockchain.scss";
-import Temp from "../Miner/Miner";
+import Miner from "../Miner/Miner";
 
 const BlockChain = () => {
   const [blocks, setBlocks] = useState([
@@ -126,7 +126,7 @@ const BlockChain = () => {
       <div className="blockchain">
         {blocks.map((block) => {
           return (
-            <Temp
+            <Miner
               key={block.id}
               blockchain={block}
               handleBlockChange={handleBlockChange}
