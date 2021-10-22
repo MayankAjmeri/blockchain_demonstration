@@ -14,19 +14,19 @@ const Miner = ({
     <div className="miner">
       <div className="dataform">
         <h4>Block: </h4>
-        <textarea
+        <input
+          type="number"
           value={blockchain.block}
           onChange={(e) => handleBlockChange(blockchain.id, e.target.value)}
-          rows={1}
           className="miner_Data_Input"
         />
       </div>
       <div className="dataform">
         <h4>Nonce: </h4>
-        <textarea
+        <input
+          type="number"
           value={blockchain.nonce}
           onChange={(e) => handleNonceChange(blockchain.id, e.target.value)}
-          rows={1}
           className="miner_Data_Input"
         />
       </div>

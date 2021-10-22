@@ -79,19 +79,19 @@ class Block extends Component {
         <div className="block">
           <div className="dataform">
             <h4>Block: </h4>
-            <textarea
+            <input
+              type="number"
               value={this.state.block}
               onChange={this.handleBlockChange}
-              rows={1}
               className="data_Input"
             />
           </div>
           <div className="dataform">
             <h4>Nonce: </h4>
-            <textarea
+            <input
+              type="number"
               value={this.state.nonce}
               onChange={this.handleNonceChange}
-              rows={1}
               className="data_Input"
             />
           </div>
@@ -113,16 +113,23 @@ class Block extends Component {
               placeholder={this.state.hash}
             />
           </div>
-          <button className="mine" onClick={this.clickHandler} disabled={this.state.loading}>
-            {!this.state.loading ? ( <p style={{margin: "0px"}}>Mine</p>
-            ): 
-             <p style={{margin: "0px", justifyContent: "center"}}> Mining    
-            <i
-              className="fa fa-spinner fa-spin"
-              style={{ margin: "0 5px", fontSize: "24px" }}
-            /> 
-             </p> 
-          }
+          <button
+            className="mine"
+            onClick={this.clickHandler}
+            disabled={this.state.loading}
+          >
+            {!this.state.loading ? (
+              <p style={{ margin: "0px" }}>Mine</p>
+            ) : (
+              <p style={{ margin: "0px", justifyContent: "center" }}>
+                {" "}
+                Mining
+                <i
+                  className="fa fa-spinner fa-spin"
+                  style={{ margin: "0 5px", fontSize: "24px" }}
+                />
+              </p>
+            )}
           </button>
         </div>
       </div>
