@@ -1,24 +1,27 @@
-.home {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  padding: 0 10%;
-  // background-color: #adefd1ff;
-  // background-color: #fcf6f5ff;
-  // background-color: #9cc3d5ff;
-  // color: white;
-}
-
-.Navbar {
+.navbar {
   display: flex;
-  // background-color: #00203fff;
-  // background-color: #89abe3ff;
-  // background-color: #0063b2ff;
   background-color: #006dc7;
   color: white;
   height: 100px;
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+.home {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 10%;
+}
+.footer {
+  background-color: rgb(20, 20, 20);
+  color: whitesmoke;
+  padding: 10px 0 20px 10%;
+  text-align: left;
+  justify-content: right;
+  align-items: flex-end;
+}
+p {
+  margin-bottom: 0;
 }

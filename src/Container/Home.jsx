@@ -9,7 +9,7 @@ import Distributed from "../Components/Distributed/Distributed";
 function Home() {
   return (
     <div>
-      <div className="Navbar">
+      <div className="navbar">
         <h1>Live Blockchain</h1>
       </div>
       <div className="home">
@@ -17,6 +17,14 @@ function Home() {
         <Block />
         <Blockchain />
         <Distributed />
+      </div>
+      <div className="footer">
+        <h4>Created by:</h4>
+        <p>201851012 Mayank Ajmeri</p>
+        <p>201851089 Prateek Chouhan</p>
+        <p>201851029 Ashutosh Singh</p>
+        <p>201851013 Akshat Srivastava</p>
+        <p>201851038 Devansh Agrawal</p>
       </div>
     </div>
   );
