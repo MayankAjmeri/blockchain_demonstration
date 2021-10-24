@@ -1,37 +1,37 @@
 .container {
-	padding: 10px;
-	width: auto;
-	margin-bottom: 20px;
+  padding: 10px;
+  width: auto;
+  margin-bottom: 20px;
 }
 
 .dataform {
-	display: flex;
-	flex-flow: row;
-	align-items: center;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 }
 
 .data_Input {
-	width: 65vw;
-	margin: 10px 20px;
-	padding: 10px;
-	resize: none;
+  width: 65vw;
+  margin: 10px 20px;
+  padding: 10px;
+  resize: none;
 }
 
 .mine {
-	background-color: royalblue;
-	border-radius: 5px;
-	width: 80px;
-	height: 40px;
-	margin: 20px;
-	font-size: large;
-	color: white;
-	border: 0;
-	align-items: center;
-	justify-content: center;
+  background-color: #006dc7;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  margin: 20px;
+  font-size: large;
+  color: white;
+  border: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .mine:disabled {
-	width: 120px;
-	height: 40px;
-	background-color: rgb(97, 127, 219);
+  width: 120px;
+  height: 40px;
+  background-color: #4485b9;
 }

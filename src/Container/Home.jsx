@@ -8,12 +8,16 @@ import Distributed from "../Components/Distributed/Distributed";
 
 function Home() {
   return (
-    <div className="home">
-      <div>Home</div>
-      <Hash />
-      <Block />
-      <Blockchain />
-      <Distributed />
+    <div>
+      <div className="Navbar">
+        <h1>Live Blockchain</h1>
+      </div>
+      <div className="home">
+        <Hash />
+        <Block />
+        <Blockchain />
+        <Distributed />
+      </div>
     </div>
   );
 }

@@ -2,5 +2,23 @@
   display: block;
   align-items: center;
   justify-content: center;
+  text-align: left;
   padding: 0 10%;
+  // background-color: #adefd1ff;
+  // background-color: #fcf6f5ff;
+  // background-color: #9cc3d5ff;
+  // color: white;
+}
+
+.Navbar {
+  display: flex;
+  // background-color: #00203fff;
+  // background-color: #89abe3ff;
+  // background-color: #0063b2ff;
+  background-color: #006dc7;
+  color: white;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
