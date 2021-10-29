@@ -72,16 +72,12 @@ const BlockChain = () => {
 
   const handleBlockChange = (index, value) => {
     const temp = blocks;
-    // console.log("index, value", index, value);
-
     temp[index].block = value;
-    // console.log([...updateHash(temp, index)]);
     setBlocks([...updateHash(temp, index)]);
   };
 
   const handleNonceChange = (index, value) => {
     const temp = blocks;
-    console.log(temp[index]);
     temp[index].nonce = value;
     setBlocks([...updateHash(temp, index)]);
   };
@@ -94,11 +90,9 @@ const BlockChain = () => {
 
   const clickHandler = (index) => {
     const temp = blocks;
-    console.log(index);
     let nonce = 1;
     const hash = crypto.createHash("sha256");
     let is_req_hash = false;
-    console.log(temp[index]);
     let hash_value;
     while (!is_req_hash) {
       hash_value = hash
@@ -109,7 +103,6 @@ const BlockChain = () => {
       }
       nonce++;
     }
-    console.log(hash_value);
     temp[index].hash = hash_value;
     temp[index].nonce = nonce;
     index++;
