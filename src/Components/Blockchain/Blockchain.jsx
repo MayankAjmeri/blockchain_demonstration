@@ -47,23 +47,27 @@ const BlockChain = () => {
     },
   ]);
 
-  const updateHash = (tempBlock) => {
-    tempBlock.forEach((ele, index, tempBlock) => {
-      const prev = index > 0 ? tempBlock[index - 1].hash : ele.prev;
+  const updateHash = (tempBlock, index) => {
+    for (; index < tempBlock.length; index++) {
+      const prev =
+        index > 0 ? tempBlock[index - 1].hash : tempBlock[index].prev;
       const hash = crypto
         .createHash("sha256")
-        .update(ele.block + ele.nonce + ele.data + prev)
+        .update(
+          tempBlock[index].block +
+            tempBlock[index].nonce +
+            tempBlock[index].data +
+            prev
+        )
         .digest("hex");
-      ele.prev = prev;
-      ele.hash = hash;
-      return ele;
-    });
-
+      tempBlock[index].prev = prev;
+      tempBlock[index].hash = hash;
+    }
     return tempBlock;
   };
 
   useEffect(() => {
-    setBlocks([...updateHash(blocks)]);
+    setBlocks([...updateHash(blocks, 0)]);
   }, []);
 
   const handleBlockChange = (index, value) => {
@@ -71,21 +75,21 @@ const BlockChain = () => {
     // console.log("index, value", index, value);
 
     temp[index].block = value;
-    // console.log([...updateHash(temp)]);
-    setBlocks([...updateHash(temp)]);
+    // console.log([...updateHash(temp, index)]);
+    setBlocks([...updateHash(temp, index)]);
   };
 
   const handleNonceChange = (index, value) => {
     const temp = blocks;
     console.log(temp[index]);
     temp[index].nonce = value;
-    setBlocks([...updateHash(temp)]);
+    setBlocks([...updateHash(temp, index)]);
   };
 
   const handleDataChange = (index, value) => {
     const temp = blocks;
     temp[index].data = value;
-    setBlocks([...updateHash(temp)]);
+    setBlocks([...updateHash(temp, index)]);
   };
 
   const clickHandler = (index) => {

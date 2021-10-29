@@ -5,175 +5,187 @@ import crypto from "crypto";
 
 const Distributed = () => {
   const [blocks, setBlocks] = useState([
-    [{
-      id: 0,
-      block: 1,
-      nonce: 11316,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 1,
-      block: 2,
-      nonce: 35230,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 2,
-      block: 3,
-      nonce: 12937,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 3,
-      block: 4,
-      nonce: 35990,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 4,
-      block: 5,
-      nonce: 56265,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },], [{
-      id: 0,
-      block: 1,
-      nonce: 11316,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 1,
-      block: 2,
-      nonce: 35230,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 2,
-      block: 3,
-      nonce: 12937,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 3,
-      block: 4,
-      nonce: 35990,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 4,
-      block: 5,
-      nonce: 56265,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },], [{
-      id: 0,
-      block: 1,
-      nonce: 11316,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 1,
-      block: 2,
-      nonce: 35230,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 2,
-      block: 3,
-      nonce: 12937,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 3,
-      block: 4,
-      nonce: 35990,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },
-    {
-      id: 4,
-      block: 5,
-      nonce: 56265,
-      data: null,
-      prev: "0000000000000000000000000000000000000000000000000000000000000000",
-      hash: null,
-    },]
-  ])
+    [
+      {
+        id: 0,
+        block: 1,
+        nonce: 11316,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 1,
+        block: 2,
+        nonce: 35230,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 2,
+        block: 3,
+        nonce: 12937,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 3,
+        block: 4,
+        nonce: 35990,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 4,
+        block: 5,
+        nonce: 56265,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+    ],
+    [
+      {
+        id: 0,
+        block: 1,
+        nonce: 11316,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 1,
+        block: 2,
+        nonce: 35230,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 2,
+        block: 3,
+        nonce: 12937,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 3,
+        block: 4,
+        nonce: 35990,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 4,
+        block: 5,
+        nonce: 56265,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+    ],
+    [
+      {
+        id: 0,
+        block: 1,
+        nonce: 11316,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 1,
+        block: 2,
+        nonce: 35230,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 2,
+        block: 3,
+        nonce: 12937,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 3,
+        block: 4,
+        nonce: 35990,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+      {
+        id: 4,
+        block: 5,
+        nonce: 56265,
+        data: null,
+        prev: "0000000000000000000000000000000000000000000000000000000000000000",
+        hash: null,
+      },
+    ],
+  ]);
 
-
-  const updateHash = (tempBlock, peer) => {
-
-    tempBlock[peer].forEach((ele, index, tempBlock) => {
-      const prev = index > 0 ? tempBlock[index - 1].hash : ele.prev;
+  const updateHash = (tempBlock, peer, index) => {
+    for (; index < tempBlock[peer].length; index++) {
+      const prev =
+        index > 0
+          ? tempBlock[peer][index - 1].hash
+          : tempBlock[peer][index].prev;
       const hash = crypto
         .createHash("sha256")
-        .update(ele.block + ele.nonce + ele.data + prev)
+        .update(
+          tempBlock[peer][index].block +
+            tempBlock[peer][index].nonce +
+            tempBlock[peer][index].data +
+            prev
+        )
         .digest("hex");
-      ele.prev = prev;
-      ele.hash = hash;
-      return ele;
-    });
-
+      tempBlock[peer][index].prev = prev;
+      tempBlock[peer][index].hash = hash;
+    }
     return tempBlock;
   };
 
   useEffect(() => {
-    setBlocks([...updateHash(blocks, 0)]);
-    setBlocks([...updateHash(blocks, 1)]);
-    setBlocks([...updateHash(blocks, 2)]);
+    setBlocks([...updateHash(blocks, 0, 0)]);
+    setBlocks([...updateHash(blocks, 1, 1)]);
+    setBlocks([...updateHash(blocks, 2, 2)]);
   }, []);
 
   const handleBlockChange = (peer, index, value) => {
     const temp = blocks;
-    // 
+    //
 
     temp[peer][index].block = value;
-    // 
-    setBlocks([...updateHash(temp, peer)]);
+    //
+    setBlocks([...updateHash(temp, peer, index)]);
   };
 
   const handleNonceChange = (peer, index, value) => {
     const temp = blocks;
 
     temp[peer][index].nonce = value;
-    setBlocks([...updateHash(temp, peer)]);
+    setBlocks([...updateHash(temp, peer, index)]);
   };
 
   const handleDataChange = (peer, index, value) => {
     const temp = blocks;
     temp[peer][index].data = value;
-    setBlocks([...updateHash(temp, peer)]);
+    setBlocks([...updateHash(temp, peer, index)]);
   };
 
   const clickHandler = (peer, index) => {
     const temp = blocks;
-    // 
-    // 
+    //
+    //
     let nonce = 1;
     const hash = crypto.createHash("sha256");
     let is_req_hash = false;
@@ -181,7 +193,12 @@ const Distributed = () => {
     let hash_value;
     while (!is_req_hash) {
       hash_value = hash
-        .update(temp[peer][index].block + nonce + temp[peer][index].data + temp[peer][index].prev)
+        .update(
+          temp[peer][index].block +
+            nonce +
+            temp[peer][index].data +
+            temp[peer][index].prev
+        )
         .digest("hex");
       if (hash_value.substr(0, 4) === "0000") {
         is_req_hash = true;
@@ -193,10 +210,16 @@ const Distributed = () => {
     temp[peer][index].nonce = nonce;
     index++;
     for (; index < temp[peer].length; index++) {
-      const prev = index > 0 ? temp[peer][index - 1].hash : temp[peer][index].prev;
+      const prev =
+        index > 0 ? temp[peer][index - 1].hash : temp[peer][index].prev;
       const hash = crypto
         .createHash("sha256")
-        .update(temp[peer][index].block + temp[peer][index].nonce + temp[peer][index].data + prev)
+        .update(
+          temp[peer][index].block +
+            temp[peer][index].nonce +
+            temp[peer][index].data +
+            prev
+        )
         .digest("hex");
       temp[peer][index].prev = prev;
       temp[peer][index].hash = hash;
@@ -257,6 +280,5 @@ const Distributed = () => {
     </div>
   );
 };
-
 
 export default Distributed;
